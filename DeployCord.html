@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Discord</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<Style>/* General styles */
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #36393f;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header styles */
+
+header {
+	background-color: #202225;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+
+.logo {
+	font-size: 24px;
+	font-weight: bold;
+	margin-right: auto;
+}
+
+input[type="text"] {
+	background-color: #40444b;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	padding: 8px 12px;
+	margin-right: 10px;
+}
+
+.user-profile {
+	background-color: #40444b;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Sidebar styles */
+
+.sidebar {
+	background-color: #2f3136;
+	height: 100%;
+	width: 250px;
+	position: fixed;
+	left: 0;
+	top: 50px;
+	padding: 10px;
+	overflow-y: auto;
+}
+
+.sidebar ul li a {
+	display: block;
+	padding: 10px;
+	color: #fff;
+	transition: background-color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+	background-color: #40444b;
+}
+
+/* Main content styles */
+
+main {
+	margin-top: 50px;
+	margin-left: 250px;
+	padding: 10px;
+}
+
+.chat-box {
+	background-color: #2f3136;
+	height: calc(100vh - 130px);
+	padding: 10px;
+	overflow-y: auto;
+}
+
+.message {
+	margin-bottom: 10px;
+}
+
+input[type="text"] {
+	background-color: #40444b;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	padding: 8px 12px;
+	width: calc(100% - 80px);
+	margin-right: 10px;
+}
+
+button {
+	background-color: #7289da;
+	border: none;
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #677bc4;
+}
+/* General styles */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #36393f;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+
+header {
+  background-color: #2f3136;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: auto;
+  margin-left: 20px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar input[type="text"] {
+  background-color: #40444b;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  padding: 10px 40px 10px 20px;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.search-bar input[type="text"]:focus {
+  outline: none;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.user-profile {
+  background-color: #7289da;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-profile:hover {
+  background-color: #5e7fcc;
+}
+
+/* Sidebar styles */
+
+.sidebar {
+  background-color: #2f3136;
+  height: calc(100vh - 70px);
+  width: 240px;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  padding: 10px;
+  overflow-y: auto;
+  z-index: 998;
+}
+
+.server-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.server-info:hover {
+  background-color: #40444b;
+}
+
+.server-info .avatar {
+  background-color: #7289da;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.server-info .name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.channel-list {
+  margin-top: 10px;
+}
+
+.channel-list li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  transition: background-color 0.2s ease;
+  border-radius: 20px;
+}
+
+.channel-list li a:hover {
+  background-color: #40444b;
+}
+
+/* Main content styles */
+
+main {
+  margin-top: 70px;
+  margin-left: 240px;
+  padding: 10px;
+}
+
+.chat-box {
+  background-color: #2f3136;
+  height: calc(100vh - 190px);
+ 
+
+</Style>
+<body>
+	<header>
+		<div class="logo">My Discord</div>
+		<input type="text" placeholder="Search...">
+		<div class="user-profile">User Profile Icon</div>
+	</header>
+	<div class="sidebar">
+		<ul>
+			<li><a href="#">General</a></li>
+			<li><a href="#">Random</a></li>
+			<li><a href="#">Games</a></li>
+		</ul>
+	</div>
+	<main>
+		<div class="chat-box">
+			<div class="message">User1: Hello!</div>
+			<div class="message">User2: Hi there!</div>
+		</div>
+		<div class="input-box">
+			<input type="text" placeholder="Type your message...">
+			<button>Send</button>
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
+<link type="text/css" rel="stylesheet" href="https://code.jquery.com/mobile/latest/jquery.mobile.css"/>
+    <title>Guess the Number</title>
+</head>
+<style>
+    *
+
+    /* Global Styles */
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #111;
+    }
+
+    a {
+        font-size: 12px;
+        color: #666;
+        text-decoration: none;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    /* App Button */
+    .app-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .app-button:hover {
+        background-color: #3e8e41;
+    }
+
+    /* Guess the Number Game Styles */
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #black;
+        padding: 20px;
+        border-radius: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .container p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .container input {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        width: 60%;
+        margin-right: 10px;
+    }
+
+    .container button {
+        background-color: #4CAF50;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .container button:hover {
+        background-color: #3e8e41;
+    }
+
+    .container p#result {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    /* Next Update Styles */
+    .container2 {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .container2 h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .container2 li {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    input {
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        width: 60%;
+        margin-right: 10px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #3e8e41;
+    }
+
+    p#result {
+        font-size: 24px;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    .app-button {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .app-button:hover {
+        background-color: #c62828;
+    }
+</style>
+<style>
+    .cool-text {
+        font-size: 72px;
+        font-family: 'Raleway', sans-serif;
+        color: #fff;
+        background: linear-gradient(45deg, #D4145A, #FBB03B, #00A3EF, #FFAA00, #D4145A);
+        background-size: 1000%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: cool-text 30s ease-in-out infinite;
+    }
+
+    @keyframes cool-text {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 1000% 0;
+        }
+    }
+</style>
+<style>
+    body {
+        background-color
+    }
+
+    @font-face {
+        font-family: 'Rocher';
+        src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+    }
+
+    textcool {
+        font-family: 'Rocher';
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1c {
+        margin: 0;
+        font-size: 7vh;
+    }
+
+    @font-palette-values --Grays {
+        font-family: Rocher;
+        base-palette: 9;
+    }
+
+    @font-palette-values --Purples {
+        font-family: Rocher;
+        base-palette: 6;
+    }
+
+    @font-palette-values --Mint {
+        font-family: Rocher;
+        base-palette: 7;
+    }
+
+    .grays {
+        font-palette: --Grays;
+    }
+
+    .purples {
+        font-palette: --Purples;
+    }
+
+    .mint {
+        font-palette: --Mint;
+    }
+</style>
+
+<style>
+    .textcolor3 {
+        color: white;
+        background-color: black;
+    }
+
+
+    /* CSS */
+    .button-86 {
+        margin: 20px auto;
+        -webkit-text-fill-color: #FFFFFF;
+        color: #FFFFFF;
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: cursor;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-86:before {
+        content: "";
+        background: linear-gradient(45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing-button-86 {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .button-86:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    .textcolors2 {
+        color: #FFFFFF;
+        -webkit-text-fill-color: #FFFFFF;
+    }
+
+    /* CSS */
+    .button-85 {
+        margin: 20px auto;
+        -webkit-text-fill-color: #FFFFFF;
+        color: #FFFFFF;
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: cursor;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-85:before {
+        content: "";
+        background: linear-gradient(45deg,
+                #ff0000,
+                #ff7300,
+                #fffb00,
+                #48ff00,
+                #00ffd5,
+                #002bff,
+                #7a00ff,
+                #ff00c8,
+                #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing-button-85 {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .button-85:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    .bodycolor {
+        background: 111;
+    }
+</style>
+
+
+
+<body>
+
+    <div class="button-85" class="container2">
+        <a>Version 1.48(beta)</a>
+        <button class="button-85" role="banner" onclick="window.location.href='http://deployschoolworkhere.infinityfreeapp.com/LoadApps.html';">Apps(beta)</button>
+        <button class="button-85" role="button" onclick="window.location.href='#';">Dino Game(Not working!)</button>
+    </div>
+
+
+    <div class="button-86" class="container">
+
+        <h1 class="cool-text">Gusse the Nubmer!!!</h1>
+        <p>Guess a number between 1 and 100</p>
+        <p>Gusse what dino game is coming back</p>
+      <p>Next 2 update we will be colab with other creators!!</p>
+        <p>New Update everyday</p>
+
+
+        <input type="text" class="textcolor3" id="guess" name="guess" onkeyup="submitOnEnter(event)" style="color: white; background-color: black;">
+        <button class="button-85 textcolor3" onclick="checkGuess()" style="color: white; background-color: black;">Submit</button>
+        <p id="result"></p>
+    </div>
+    <div class="button-85" class="container2 li">
+        <h2>Update Log</h2>
+        <li>New ui!</li>
+        <li>Discord kinda?</li>
+        <li>Games getting added</li>
+
+
+        <h2>Bug fixes</h2>
+      <li>Fixing dino game just a bit borken</li>
+
+
+        <script>
+            function submitOnEnter(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    checkGuess();
+                }
+            }
+        </script>
+
+
+        <script>
+            // Define a variable to hold the random number
+            let randomNumber;
+
+            // Function to generate a new random number and reset the result message
+            function refresh() {
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("randomNumber").innerHTML = `Random number: ${randomNumber}`;
+            }
+
+            // Call the refresh function when the page loads
+            window.onload = refresh;
+
+            // Function to check the player's guess
+            function checkGuess() {
+                // Get the player's guess from the input field
+                const guess = parseInt(document.getElementById("guess").value);
+
+                // Check if the guess is correct, too high, or too low
+                if (guess === randomNumber) {
+                    document.getElementById("result").innerHTML = "Congratulations! You guessed the number! Refreshing!!!";
+                    setTimeout(refresh, 3000); // Refresh the number after 1 second
+                } else if (guess > randomNumber) {
+                    document.getElementById("result").innerHTML = "Too high. Try again.";
+                } else if (guess < randomNumber) {
+                    document.getElementById("result").innerHTML = "Too low. Try again.";
+                }
+            }
+        </script>
+
+</body>
+
+</html>
